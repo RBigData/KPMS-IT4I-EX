@@ -12,6 +12,6 @@ module load R
 echo "loaded R"
 
 # Best combination for Karolina
-time Rscript mnist_rf.R --args 64  8
+time Rscript mnist_plot.R --args 64  8
 
 
