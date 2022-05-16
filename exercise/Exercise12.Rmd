@@ -22,3 +22,11 @@ Next lecture is May 18, in-person. In the meantime, I am available for questions
 What is a scaling graph for a parallel code? 
 
 It shows how the run time of a code changes as we give it more cores or nodes. An example is on slide 16 of Lecture 3.
+
+**Note2**
+
+The `finalize()` line is commented out in `mnist_read_mpi.R` because we are sourcing it in the `mnist_rsvd.R` script, which has a `finalize()` at the end. If you run `mnist_read_mpi.R` by itself, it will give an error exit and complain that `finalize()` was not done.
+
+**Note3**
+
+There are many warnings coming out of the `mnist_rsvd.R` code when `finalize()` is executed. At this time, I don't have a solution, but everything up the the `finalize()` appears to work correctly. There is some recent discussion on the web about potential reasons: https://gitlab.jsc.fz-juelich.de/cstao-public/linktest/-/issues/45 but also no solution. I have not seen these messages elsewhere for the same code, so the best advice I have is to ignore them for now. I will post here when I know how to remove them.
